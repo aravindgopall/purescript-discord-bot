@@ -39,7 +39,6 @@ foreign import _onMessage :: Client -> (Message -> Effect Unit) -> Effect Messag
 foreign import onReady :: Client -> (Unit -> Effect Unit) -> Effect Unit
 {-- foreign import _getMessage :: Client -> Message --}
 
-
 onMessage :: Client -> Aff Message
 onMessage client = makeAff (\cb -> _onMessage client (Right >>> cb) *> pure nonCanceler)
 

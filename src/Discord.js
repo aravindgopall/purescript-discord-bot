@@ -3,7 +3,7 @@ const discord = require('discord.js');
 
 exports["getClient"] = function(options) {
 	return function(){
-		var client = new discord.Client();
+		var client = new discord.Client(options);
 		return client;
 	}
 }
